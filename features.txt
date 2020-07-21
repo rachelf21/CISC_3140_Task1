@@ -1,0 +1,7 @@
+I used the following ImageMagick commands to create the animation:
+
+1. label:  this created the individual text files
+2. convert:  flags used included delay, page, loop to convert the above images into an animated gif
+3. convert -annotate to add the small text down at the bottom
+
+This was fun! I enjoyed playing around with this!
