@@ -1,8 +1,21 @@
 I used the following ImageMagick commands to create the animation:
 
-1. label:  this created the individual text files
-2. convert with the following flags: delay, page, loop to convert the above images into an animated gif
-3. convert -annotate to add the small text down at the bottom
+
+1) magick convert -fill blue -font Clattering -size 300x150   -gravity center label:"Have an " img1.gif
+
+2) magick convert -fill blue -font Clattering -size 300x150   -gravity center label:"awesome " img2.gif
+
+3) magick convert -fill blue -font Clattering -size 300x150   -gravity center label:"summer! " img3.gif
+
+4) magick convert -delay 100 -size 300x700 xc:transparent -page +5+5 img1.gif -page +5+155 img2.gif -page +5+305 img3.gif -page +5+455 sun.jpg -loop 0 animation.gif
+
+5) magick sun.png -resize 300x200 sun-resized.png
+
+6) magick convert -delay 100 -size 300x700 xc:transparent -page +5+5 img1.gif -page +5+155 img2.gif -page +5+305 img3.gif -page +5+455 sun-resized.png -loop 0 animation.gif
+
+7) magick animation.gif -fill black -annotate +5+680 'Created by Rachel Friedman for CISC3140' animation_annotated.gif
+
+
 
 This was fun! I enjoyed playing around with this! If I have time, I'd like to come back to this and add some more stuff.
 
